@@ -1,0 +1,15 @@
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 131-847-825
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://192.168.0.12:5000/ (Press CTRL+C to quit)
+INFO:app:Returning the metrics
+INFO:werkzeug:192.168.0.12 - - [04/Mar/2024 17:18:46] "GET /metrics HTTP/1.1" 200 -
+INFO:app:Main request successfull
+INFO:werkzeug:192.168.0.12 - - [04/Mar/2024 17:18:55] "GET / HTTP/1.1" 200 -
+INFO:app:Returning the metrics
+INFO:werkzeug:192.168.0.12 - - [04/Mar/2024 17:19:04] "GET /metrics HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.12 - - [04/Mar/2024 17:24:00] "[33mGET /notfound HTTP/1.1[0m" 404 -
+INFO:app:Returning the metrics
+INFO:werkzeug:192.168.0.12 - - [04/Mar/2024 17:27:38] "GET /metrics HTTP/1.1" 200 -
