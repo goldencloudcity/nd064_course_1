@@ -1,11 +1,76 @@
 ## Docker commands used to build the application 
 # TODO: insert the docker build command
+docker build -t techtrends .
 
 ## Docker commands used to run the application
 # TODO: insert the docker run command
+docker run -d -p 7111:3111 techtrends:latest
 
 ## Docker commands used to get the application logs
 # TODO: insert the docker logs command
+docker ps
+docker logs 98704dbce15d
 
 ## Logs from the container running the TechTrends application
 # TODO: paste logs from the Docker container 
+$ docker logs 98704dbce15d
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+DEBUG:app:connection_counter: 1
+DEBUG:app:connection_counter: 1
+INFO:werkzeug:172.17.0.1 - - [09/Apr/2024 22:35:54] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [09/Apr/2024 22:35:54] "GET /static/css/main.css HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [09/Apr/2024 22:35:54] "GET /favicon.ico HTTP/1.1" 404 -
+DEBUG:app:connection_counter: 1
+DEBUG:app:Article "2020 CNCF Annual Report" retrieved!
+INFO:werkzeug:172.17.0.1 - - [09/Apr/2024 22:35:56] "GET /1 HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [09/Apr/2024 22:35:56] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [09/Apr/2024 22:35:58] "GET /create HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [09/Apr/2024 22:35:58] "GET /static/css/main.css HTTP/1.1" 304 -
+DEBUG:app:connection_counter: 1
+DEBUG:app:connection_counter: 1
+DEBUG:app:New Article "h" is created!
+INFO:werkzeug:172.17.0.1 - - [09/Apr/2024 22:36:03] "POST /create HTTP/1.1" 302 -
+DEBUG:app:connection_counter: 1
+DEBUG:app:connection_counter: 1
+INFO:werkzeug:172.17.0.1 - - [09/Apr/2024 22:36:03] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [09/Apr/2024 22:36:03] "GET /static/css/main.css HTTP/1.1" 304 -
+DEBUG:app:connection_counter: 1
+DEBUG:app:connection_counter: 1
+DEBUG:app:Metrics request successful
+INFO:werkzeug:172.17.0.1 - - [09/Apr/2024 22:36:10] "GET /metrics HTTP/1.1" 200 -
+DEBUG:app:Status request successful
+DEBUG:app:DEBUG message
+INFO:werkzeug:172.17.0.1 - - [09/Apr/2024 22:36:16] "GET /healthz HTTP/1.1" 200 -
+DEBUG:app:connection_counter: 1
+DEBUG:app:connection_counter: 1
+INFO:werkzeug:172.17.0.1 - - [09/Apr/2024 22:36:47] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [09/Apr/2024 22:36:47] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [09/Apr/2024 22:44:17] "GET /create HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [09/Apr/2024 22:44:17] "GET /static/css/main.css HTTP/1.1" 304 -
+DEBUG:app:connection_counter: 1
+DEBUG:app:connection_counter: 1
+DEBUG:app:New Article "My new post title!!!" is created!
+INFO:werkzeug:172.17.0.1 - - [09/Apr/2024 22:44:28] "POST /create HTTP/1.1" 302 -
+DEBUG:app:connection_counter: 1
+DEBUG:app:connection_counter: 1
+INFO:werkzeug:172.17.0.1 - - [09/Apr/2024 22:44:28] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [09/Apr/2024 22:44:28] "GET /static/css/main.css HTTP/1.1" 304 -
+DEBUG:app:connection_counter: 1
+DEBUG:app:Article "2020 CNCF Annual Report" retrieved!
+INFO:werkzeug:172.17.0.1 - - [09/Apr/2024 22:44:32] "GET /1 HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [09/Apr/2024 22:44:32] "GET /static/css/main.css HTTP/1.1" 304 -
+DEBUG:app:connection_counter: 1
+DEBUG:app:404: A non-existent article is retrieved!
+INFO:werkzeug:172.17.0.1 - - [09/Apr/2024 22:44:35] "GET /12 HTTP/1.1" 404 -
+INFO:werkzeug:172.17.0.1 - - [09/Apr/2024 22:44:35] "GET /static/css/main.css HTTP/1.1" 304 -
+DEBUG:app:connection_counter: 1
+DEBUG:app:connection_counter: 1
+DEBUG:app:Metrics request successful
+INFO:werkzeug:172.17.0.1 - - [09/Apr/2024 22:44:40] "GET /metrics HTTP/1.1" 200 -
