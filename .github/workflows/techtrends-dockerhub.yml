@@ -31,5 +31,5 @@ jobs:
           file: ./project/Dockerfile
           platforms: linux/amd64
           push: true
-          tags: goldencloudcity/nd064_course_1:latest
+          tags: ladybird879/techtrends:latest
 
