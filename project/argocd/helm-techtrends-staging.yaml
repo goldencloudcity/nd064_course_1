@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: python-helloworld 
+  name: techtrends-staging
   namespace: argocd
 spec:
   destination:
@@ -9,7 +9,9 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: solutions/argocd/python-manifests
-    repoURL: https://github.com/udacity/nd064_course_1 
+    helm:
+      valueFiles:
+      - values-staging.yaml
+    path: project/argocd/python-manifests
+    repoURL: https://github.com/goldencloudcity/nd064_course_1 
     targetRevision: HEAD
-  syncPolicy: {}
