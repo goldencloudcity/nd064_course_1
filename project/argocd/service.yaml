@@ -4,7 +4,7 @@ metadata:
   labels:
     app: techtrends
   name: techtrends
-  namespace: argocd
+  namespace: default
 spec:
   selector:
     app: techtrends
