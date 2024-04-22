@@ -3,10 +3,10 @@ kind: Deployment
 metadata:
   labels:
     app: techtrends
-  name: techtrends
+  name: {{ .Values.namespace.name }}
   namespace: default
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicaCount }} 
   selector:
     matchLabels:
       app: techtrends
@@ -21,27 +21,26 @@ spec:
         app: techtrends
     spec:
       containers:
-      - image: ladybird879/techtrends:latest
-        imagePullPolicy: IfNotPresent 
+      - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
         name: techtrends
         ports:
-        - containerPort: 3111
+        - containerPort:  {{ .Values.containerPort }}
         resources:
          limits:
-          cpu: "500m"
-          memory: "128Mi"
+          cpu: {{ .Values.resources.limits.cpu }}
+          memory: {{ .Values.resources.limits.memory }}
          requests:
-          cpu: "250m"
-          memory: "64Mi"
+          cpu: {{ .Values.resources.requests.cpu }}
+          memory: {{ .Values.resources.requests.memory }}
         livenessProbe:
          httpGet:
-          path: /healthz
-          port: 3111
-         initialDelaySeconds: 5
-         periodSeconds: 10
+          path: {{ .Values.livenessProbe.httpGet.path }}
+          port: {{ .Values.livenessProbe.httpGet.port }}
         readinessProbe:
          httpGet:
-          path: /healthz
-          port: 3111
-         initialDelaySeconds: 5
-         periodSeconds: 10
+          path: {{ .Values.readinessProbe.httpGet.path }}
+          port: {{ .Values.readinessProbe.httpGet.port }}
+
+
+

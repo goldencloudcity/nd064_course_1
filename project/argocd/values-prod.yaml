@@ -7,7 +7,7 @@ service:
   protocol: TCP
   type: ClusterIP
 image:
-  repository: techtrends 
+  repository: ladybird879/techtrends #goldencloudcity/nd064_course_1 
   tag: latest
   pullPolicy: Always
 
