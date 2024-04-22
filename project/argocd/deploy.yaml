@@ -2,14 +2,14 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: techtrends
-  name: techtrends
+    app: techtrends-staging
+  name: techtrends-staging
   namespace: {{ .Values.namespace.name }}
 spec:
   replicas: {{ .Values.replicaCount }} 
   selector:
     matchLabels:
-      app: techtrends
+      app: techtrends-staging
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -18,12 +18,12 @@ spec:
   template:
     metadata:
       labels:
-        app: techtrends
+        app: techtrends-staging
     spec:
       containers:
       - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
-        name: techtrends
+        name: techtrends-staging
         ports:
         - containerPort:  {{ .Values.containerPort }}
         resources:
